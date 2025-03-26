@@ -24,10 +24,11 @@ return {
   },
   opts = {
     view = {
-      width = 30
+      width = 23
     },
     on_attach = on_attach,
   },
+ priority = 1000,
   keys = {
     { '<C-a>', '<cmd>NvimTreeToggle<cr>' }
   }

@@ -1,7 +1,5 @@
 local map = vim.keymap.set
 
-map("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
-map("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
 map("n", "<leader>tn", ":tabn<CR>", { noremap = true })
 map("n", "<leader>tp", ":tabp<CR>", { noremap = true })
 
