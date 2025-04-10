@@ -20,20 +20,21 @@ M.config = function()
 
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local opts = { buffer = ev.buf }
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, opts)
+        local opts = function(desc)
+        return { buffer = ev.buf, desc = desc }
+      end
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts("Go to declaration"))
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts("Go to definition"))
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, opts("Hover"))
         vim.keymap.set('n', '<space>wl', function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts)
-        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+        end, opts("List workspace folders"))
+        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts("Type definition"))
+        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts("Rename"))
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts("Go to references"))
         vim.keymap.set('n', '<space>f', function()
           vim.lsp.buf.format { async = true }
-        end, opts)
+        end, opts("Format"))
       end,
     })
 

@@ -24,7 +24,7 @@ return {
   },
   opts = {
     view = {
-      width = 23
+      width = 22
     },
     on_attach = on_attach,
   },
