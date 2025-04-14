@@ -6,10 +6,17 @@ local function on_attach()
 end
 
 return {
-  "lewis6991/gitsigns.nvim",
-  opts = {
-    current_line_blame = true,
-    on_attach = on_attach
+  {
+    "akinsho/git-conflict.nvim",
+    config = true
   },
-  lazy = false,
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      current_line_blame = true,
+      on_attach = on_attach
+    },
+    lazy = false,
+
+  }
 }
