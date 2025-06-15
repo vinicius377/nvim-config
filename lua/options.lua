@@ -42,5 +42,9 @@ vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.numberwidth=1
 
+vim.opt.fillchars = { 
+  eob = " "
+}
+
 vim.opt.spelllang = { 'en','pt' }
 

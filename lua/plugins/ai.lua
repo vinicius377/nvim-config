@@ -1,7 +1,7 @@
 return {
   {
     "Exafunction/codeium.nvim",
-    cond = true,
+    cond = false,
     requires = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
